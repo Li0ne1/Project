@@ -5,9 +5,13 @@ import com.example.entity.Order;
 import com.example.repository.InventoryRepository;
 import com.example.repository.OrderRepository;
 import com.example.service.OrderService;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.Optional;
 
@@ -55,6 +59,40 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
+    @Override
+    public Long saveOrder(Order order) {
+        Integer quantity = order.getQuantity();
+        String totalPrice = order.getTotalPrice();
+        String customerName = order.getCustomerName();
+        int phoneNumber = order.getPhoneNumber();
+        String shippingAddress = order.getShippingAddress();
+        int creditCardNumber = order.getCreditCardNumber();
+        if(quantity <= 0){
+            throw new RuntimeException("Quantity is incorrect");
+        }
+        if(StringUtils.isEmpty(totalPrice)){
+            throw new RuntimeException("Total Price can not be null");
+        }
+        if(StringUtils.isEmpty(customerName)){
+            throw new RuntimeException("Customer name can not be null");
+        }
+        if(phoneNumber == 0){
+            throw new RuntimeException("Phone number can not be empty");
+        }
+        if(StringUtils.isEmpty(shippingAddress)){
+            throw new RuntimeException("Shipping Address can not be null");
+        }
+        if(creditCardNumber == 0){
+            throw new RuntimeException("Credit Card Number cannot be empty");
+        }
+        Order saveOrder = orderRepo.save(order);
+        return saveOrder.getId();
+    }
+
+    @Override
+    public Order getOrderById(Long id) {
+        return orderRepo.findById(id).get();
+    }
 
 
 }

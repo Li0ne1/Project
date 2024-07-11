@@ -36,8 +36,8 @@ public class OrderController {
         if (inventory != null && inventory.getQuantity() >= order.getQuantity()) {
             inventory.setQuantity(inventory.getQuantity() - order.getQuantity());
             inventoryService.updateInventory(inventory);
-            orderService.saveOrder(order);
-            return "redirect:/orders/" + order.getId();
+            Long id = orderService.saveOrder(order);
+            return "redirect:/orders/" + id;
         } else {
             model.addAttribute("error", "Not enough inventory for the requested product.");
             return "create_order";
