@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Lobb</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="../../../../../../../Project/src/main/webapp/Mainpagecss.css">
+</head>
+
+<body>
+	<header>
+		<h1>John Lobb</h1>
+		<nav class="navbar">
+			<a th:href="@{/mainPage}">Home</a> <a th:href="@{/productInfo}">Product
+				Info</a> <a th:href="@{/shoppingCart}">Shopping Cart</a> <a
+				th:href="@{/contact}">Contact Us</a> <a th:href="@{/login}">Logout</a>
+		</nav>
+	</header>
+	<div class="company-background">
+		<h2>Company Profile</h2>
+		<p>Welcome to John Lobb. Our company was founded in 2024,
+			specializing in leather shoes, and was established by a group of
+			passionate young graduates. Our goal is to provide customers with
+			high-quality, innovative, and stylish leather shoes.</p>
+		<h3>Our Mission</h3>
+		<p>Our mission is to provide customers with the finest leather
+			shoes, enhancing their elegance and comfort in both professional and
+			personal settings. We are committed to continuous innovation and
+			improvement to meet the ever-evolving needs of our customers.</p>
+		<h3>Product Line</h3>
+		<p>We offer a wide range of leather shoes, including dress shoes,
+			casual shoes, and loafers. Each product is meticulously designed and
+			rigorously tested to ensure its quality, durability, and style.</p>
+		<h3>Customer Commitment</h3>
+		<p>Customer satisfaction is our highest priority. We are dedicated
+			to providing every customer with premium products and exceptional
+			service. Whether you are a student, a professional, or simply someone
+			who appreciates quality footwear, our products are designed to meet
+			your needs.</p>
+	</div>
+	<footer>
+		<p>&copy; John Lobb. 2024. All Rights Reserved</p>
+	</footer>
+</body>
+</html>

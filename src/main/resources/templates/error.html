@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+</head>
+<body>
+<h2>Operation Failed</h2>
+<p th:text="${message}">There was an error with your request. Please try again.</p><br>
+<a th:href="@{/login}">Go to Login</a><br>
+<a th:href="@{/signup}">Go to Signup</a>
+</body>
+</html>

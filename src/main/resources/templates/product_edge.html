@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge Details</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="../../../../../../../Project/src/main/webapp/p_detail.css">
+</head>
+<body>
+	<header>
+		<h1>John Lobb</h1>
+		<nav class="navbar">
+			<a th:href="@{/mainPage}">Home</a> <a th:href="@{/productInfo}">Product
+				Info</a> <a th:href="@{/shoppingCart}">Shopping Cart</a> <a
+				th:href="@{/contact}">Contact Us</a> <a th:href="@{/login}">Logout</a>
+		</nav>
+	</header>
+	<div class="container">
+		<div class="image-gallery">
+			<img src="../../../../../../../Project/src/main/webapp/edge-1.png"
+				alt="edge-1"> <img
+				src="../../../../../../../Project/src/main/webapp/edge-2.png"
+				alt="edge-2"> <img
+				src="../../../../../../../Project/src/main/webapp/edge-3.png"
+				alt="edge-3"> <img
+				src="../../../../../../../Project/src/main/webapp/edge-4.png"
+				alt="edge-4">
+		</div>
+		<div class="product-details">
+			<p>Introducing Edge, a fusion of sophistication and rugged charm
+				inspired by the union of a six-eyelet Oxford Prestige shoe with a
+				protective overshoe for added warmth. This unique design infuses
+				Edge with a distinctive rock 'n' roll energy, enhanced by whimsical
+				and exclusive graphic elements. Crafted entirely in glazed leather,
+				the shoe showcases a dynamic interplay of bold monochromatic
+				statements and subtle contrasts, creating an eye-catching allure for
+				those seeking an 'edgy rock' aesthetic. Step into the world of Edge,
+				where style meets durability in a perfect harmony of fashion and
+				function.</p>
+			<h5>Details</h5>
+			<ul>
+				<li>Six eyelet oxford</li>
+				<li>Seamless back</li>
+				<li>Comes with a shoe tree developed to fit the shape of the
+					shoe perfectly</li>
+				<li>Prestige leather soles boast hand sculpted waists and
+					finely wheeled edges</li>
+				<li>Goodyear welted construction for a lifetime of wear</li>
+				<li>Made in England</li>
+			</ul>
+			<p>
+				Price <span class="price">£1750.00</span>
+			</p>
+	
+						               <p>
+						                   <label for="quantity">Quantity:</label>
+						                   <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+						               </p>
+						               <p>
+						                   <label for="size">Size:</label>
+						                   <select id="size" name="size" required>
+						                       <option value="" disabled selected>None</option>
+						                       <option value="7">7</option>
+						                       <option value="7.5">7.5</option>
+						                       <option value="8">8</option>
+						                       <option value="8.5">8.5</option>
+						                       <option value="9">9</option>
+						                       <option value="9.5">9.5</option>
+						                       <option value="10">10</option>
+						                   </select>
+						               </p>
+									   <p>
+									                  <a th:href="@{/orders/new}" class="btn btn-primary">Purchase</a>
+									              </p>
+						<p>After-sales Service Hotline: 400-185-0555</p>
+						<p>Warranty Policy: National Warranty</p>
+					</div>
+				</div>
+				<footer>
+					<p>&copy; John Lobb. 2024. All Rights Reserved</p>
+				</footer>
+				<script
+					src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+					crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Inventory Page</title>
+</head>
+<body>
+	<div class="row">
+		<div class="col-lg-6 col-md-6 container justify-content-center card">
+			<h1 class="text-center">New Shoe</h1>
+			<div class="card-body">
+				<form th:action="@{/admin}" th:object="${inventory}" method="POST">
+					<div class="form-group">
+						<label>Shoe Name</label> <input type="text" name="productName"
+							th:field="*{productName}" class="form-control"
+							placeholder="Enter Shoe Name" />
+					</div>
+
+					<br>
+					<div class="form-group">
+						<label>Quantity</label> <input type="text" name="quantity"
+							th:field="*{quantity}" class="form-control"
+							placeholder="Enter Shoe Quantity" />
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Size</label> <input type="text" name="size"
+							th:field="*{size}" class="form-control"
+							placeholder="Enter Shoe Size" />
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Price</label> <input type="text" name="price"
+							th:field="*{price}" class="form-control"
+							placeholder="Enter Shoe Price" />
+					</div>
+					<br>
+					<div class="box-footer">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
