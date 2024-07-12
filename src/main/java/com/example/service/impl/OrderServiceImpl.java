@@ -62,8 +62,7 @@ public class OrderServiceImpl implements OrderService {
     public Long saveOrder(Order order) {
         Integer quantity = order.getQuantity();
         String customerName = order.getCustomerName();
-        //TODO phone number
-//        int phoneNumber = order.getPhoneNumber();
+
         String shippingAddress = order.getShippingAddress();
         int creditCardNumber = order.getCreditCardNumber();
         if(quantity <= 0){
@@ -72,9 +71,7 @@ public class OrderServiceImpl implements OrderService {
         if(StringUtils.isEmpty(customerName)){
             throw new RuntimeException("Customer name can not be null");
         }
-//        if(phoneNumber == 0){
-//            throw new RuntimeException("Phone number can not be empty");
-//        }
+
         if(StringUtils.isEmpty(shippingAddress)){
             throw new RuntimeException("Shipping Address can not be null");
         }
