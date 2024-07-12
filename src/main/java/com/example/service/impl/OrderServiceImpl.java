@@ -43,7 +43,6 @@ public class OrderServiceImpl implements OrderService {
                 Order order = new Order();
                 order.setProductId(productId);
                 order.setQuantity(quantity);
-                order.setTotalPrice(String.valueOf(Double.parseDouble(inventory.getPrice()) * quantity));
                 order.setCustomerName(customerName);
                 order.setShippingAddress(shippingAddress);
                 order.setCreditCardNumber(creditCardNumber);
@@ -62,23 +61,20 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Long saveOrder(Order order) {
         Integer quantity = order.getQuantity();
-        String totalPrice = order.getTotalPrice();
         String customerName = order.getCustomerName();
-        int phoneNumber = order.getPhoneNumber();
+        //TODO phone number
+//        int phoneNumber = order.getPhoneNumber();
         String shippingAddress = order.getShippingAddress();
         int creditCardNumber = order.getCreditCardNumber();
         if(quantity <= 0){
             throw new RuntimeException("Quantity is incorrect");
         }
-        if(StringUtils.isEmpty(totalPrice)){
-            throw new RuntimeException("Total Price can not be null");
-        }
         if(StringUtils.isEmpty(customerName)){
             throw new RuntimeException("Customer name can not be null");
         }
-        if(phoneNumber == 0){
-            throw new RuntimeException("Phone number can not be empty");
-        }
+//        if(phoneNumber == 0){
+//            throw new RuntimeException("Phone number can not be empty");
+//        }
         if(StringUtils.isEmpty(shippingAddress)){
             throw new RuntimeException("Shipping Address can not be null");
         }
@@ -86,7 +82,7 @@ public class OrderServiceImpl implements OrderService {
             throw new RuntimeException("Credit Card Number cannot be empty");
         }
         Order saveOrder = orderRepo.save(order);
-        return saveOrder.getId();
+        return saveOrder.getOrderId();
     }
 
     @Override

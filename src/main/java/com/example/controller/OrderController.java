@@ -25,7 +25,7 @@ public class OrderController {
     @GetMapping("/orders/new")
     public String createOrderForm(Model model) {
         model.addAttribute("order", new Order());
-        return "create_order";
+        return "create_order1";
     }
     
     
@@ -40,7 +40,8 @@ public class OrderController {
             return "redirect:/orders/" + id;
         } else {
             model.addAttribute("error", "Not enough inventory for the requested product.");
-            return "create_order";
+            Long orderId = order.getOrderId();
+            return "create_order" + orderId;
         }
     }
 
