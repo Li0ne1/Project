@@ -22,13 +22,60 @@ public class OrderController {
         this.inventoryService = inventoryService;
     }
 
-    @GetMapping("/orders/new")
-    public String createOrderForm(Model model) {
+    @GetMapping("/orders/new1")
+    public String createOrderForm1(Model model) {
         model.addAttribute("order", new Order());
         return "create_order1";
     }
-    
-    
+
+    @GetMapping("/orders/new2")
+    public String createOrderForm2(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order2";
+    }
+
+    @GetMapping("/orders/new3")
+    public String createOrderForm3(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order3";
+    }
+
+    @GetMapping("/orders/new4")
+    public String createOrderForm4(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order4";
+    }
+
+    @GetMapping("/orders/new5")
+    public String createOrderForm5(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order5";
+    }
+
+    @GetMapping("/orders/new6")
+    public String createOrderForm6(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order6";
+    }
+
+    @GetMapping("/orders/new7")
+    public String createOrderForm7(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order7";
+    }
+
+    @GetMapping("/orders/new8")
+    public String createOrderForm8(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order8";
+    }
+
+    @GetMapping("/orders/new9")
+    public String createOrderForm9(Model model) {
+        model.addAttribute("order", new Order());
+        return "create_order9";
+    }
+
     @PostMapping("/orders")
     public String saveOrder(@ModelAttribute("order") Order order, Model model) {
         Inventory inventory = inventoryService.getInventoryById(order.getProductId());
@@ -37,7 +84,8 @@ public class OrderController {
             inventory.setQuantity(inventory.getQuantity() - order.getQuantity());
             inventoryService.updateInventory(inventory);
             Long id = orderService.saveOrder(order);
-            return "redirect:/orders/" + id;
+            return "redirect:/mainPage"
+                    ;
         } else {
             model.addAttribute("error", "Not enough inventory for the requested product.");
             Long orderId = order.getOrderId();
